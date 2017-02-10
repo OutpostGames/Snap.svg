@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// build: 2017-02-07
+// build: 2017-02-09
 
 // Copyright (c) 2013 Adobe Systems Incorporated. All rights reserved.
 // 
@@ -463,8 +463,9 @@
     eve.toString = function () {
         return "You are running Eve " + version;
     };
+    glob.eve = eve;
     (typeof module != "undefined" && module.exports) ? (module.exports = eve) : (typeof define === "function" && define.amd ? (define("eve", [], function() { return eve; })) : (glob.eve = eve));
-})(this);
+})(window || this);
 
 (function (glob, factory) {
     // AMD support
